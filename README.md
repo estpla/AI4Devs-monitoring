@@ -160,3 +160,56 @@ POST http://localhost:3010/candidates
 }
 ```
 
+## Integración Datadog-AWS
+
+### Cambios Realizados
+
+1. **Integración AWS-Datadog**
+   - Implementación completa de la integración AWS-Datadog usando Terraform
+   - Configuración de IAM roles y políticas necesarias
+   - Establecimiento de la integración de cuenta AWS en Datadog
+   - Gestión segura del External ID
+
+2. **Configuración del Agente Datadog**
+   - Instalación automatizada del agente Datadog en instancias EC2
+   - Configuración del endpoint EU de Datadog
+   - Implementación segura de la gestión de API keys
+
+3. **Dashboard de Monitorización**
+   - Creación de dashboard comprehensivo en Datadog mediante Terraform
+   - Widgets implementados para monitorización de:
+     - Métricas EC2 (CPU, memoria, disco, red)
+     - Servicios AWS
+     - Disponibilidad y latencia de servicios frontend/backend
+
+4. **Monitores de Salud**
+   - Implementación de monitores para:
+     - Servicio Backend (tasa de errores 5xx, latencia)
+     - Servicio Frontend (ping, tiempo de carga, errores 4xx)
+   - Configuración de condiciones de alerta y mensajes de notificación
+
+### Capturas de Pantalla
+
+#### Host Map
+![Host Map](/screenshots/HostMap.png)
+
+#### Métricas
+![Métricas 1](/screenshots/Metrics-1.png)
+![Métricas 2](/screenshots/Metrics-2.png)
+
+#### Monitores
+![Monitores](/screenshots/Monitors.png)
+
+### Desafíos y Soluciones
+
+1. **Gestión de Credenciales**
+   - Desafío: Manejo seguro de API keys y credenciales
+   - Solución: Implementación de variables de entorno y gestión segura de secretos
+
+2. **Configuración del Endpoint EU**
+   - Desafío: Asegurar que toda la configuración apunte al endpoint EU de Datadog
+   - Solución: Parametrización consistente del endpoint API en la configuración de Terraform
+
+3. **Automatización Completa**
+   - Desafío: Eliminar cualquier necesidad de configuración manual
+   - Solución: Implementación exhaustiva de recursos en Terraform

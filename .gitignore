@@ -5,8 +5,23 @@
 **/node_modules
 **/prompts_master.md
 
+# Terraform files
 **/.terraform/
-**/.terraform.lock.hcl  
+**/.terraform.lock.hcl
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfvars
+**/*.tfvars.json
+**/crash.log
+**/crash.*.log
+**/*.tfplan
+**/.terraformrc
+**/terraform.rc
+
+# Generated zip files
+**/*.zip
+backend.zip
+frontend.zip
 
 # other dependencies
 **/.pnp
